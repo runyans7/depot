@@ -7,9 +7,24 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<!-- START_HIGHLIGHT -->
+
 <body class='<%= controller.controller_name %>'>
-<!-- END_HIGHLIGHT -->
-<%= yield %>
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatic Bookshelf" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><a href="#"></a>Home</li>
+        <li><a href="#"></a>Questions</li>
+        <li><a href="#"></a>News</li>
+        <li><a href="#"></a>Contacts</li>
+      </ul>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
